@@ -8,16 +8,19 @@
       location = "group:Packages"
       name = "Packages">
       <FileRef
-         location = "group:ImageCache">
+         location = "group:ThmanyahAPI">
       </FileRef>
       <FileRef
-         location = "group:Extensions">
+         location = "group:AppEnvironment">
       </FileRef>
       <FileRef
          location = "group:CoreNetwork">
       </FileRef>
       <FileRef
-         location = "group:AppEnvironment">
+         location = "group:Extensions">
+      </FileRef>
+      <FileRef
+         location = "group:ImageCache">
       </FileRef>
    </Group>
 </Workspace>
