@@ -4,4 +4,11 @@
    <FileRef
       location = "group:Thmanyah-Task/Thmanyah-Task.xcodeproj">
    </FileRef>
+   <Group
+      location = "group:Packages"
+      name = "Packages">
+      <FileRef
+         location = "group:AppEnvironment">
+      </FileRef>
+   </Group>
 </Workspace>

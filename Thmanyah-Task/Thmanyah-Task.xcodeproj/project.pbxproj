@@ -75,10 +75,10 @@
 		DC69C86C2B855687009CCF11 /* Thmanyah-Task */ = {
 			isa = PBXGroup;
 			children = (
+				DC69C87B2B85568B009CCF11 /* Info.plist */,
 				DC69C89D2B8564F1009CCF11 /* App */,
 				DC69C89E2B8564FC009CCF11 /* Configuration */,
 				DC69C89F2B856503009CCF11 /* Resources */,
-				DC69C87B2B85568B009CCF11 /* Info.plist */,
 			);
 			path = "Thmanyah-Task";
 			sourceTree = "<group>";
