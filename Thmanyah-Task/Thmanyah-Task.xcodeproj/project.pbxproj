@@ -33,6 +33,7 @@
 		DC69C87B2B85568B009CCF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC69C8802B85568B009CCF11 /* Thmanyah-TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Thmanyah-TaskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC69C8842B85568B009CCF11 /* Thmanyah_TaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thmanyah_TaskTests.swift; sourceTree = "<group>"; };
+		DC69C8A02B8565AB009CCF11 /* Thmanyah-Task.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Thmanyah-Task.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +103,7 @@
 		DC69C89E2B8564FC009CCF11 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				DC69C8A02B8565AB009CCF11 /* Thmanyah-Task.xcconfig */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -252,6 +254,7 @@
 /* Begin XCBuildConfiguration section */
 		DC69C8922B85568B009CCF11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC69C8A02B8565AB009CCF11 /* Thmanyah-Task.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -315,6 +318,7 @@
 		};
 		DC69C8932B85568B009CCF11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC69C8A02B8565AB009CCF11 /* Thmanyah-Task.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
