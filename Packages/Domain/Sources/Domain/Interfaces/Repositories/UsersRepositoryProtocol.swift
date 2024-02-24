@@ -1,6 +1,6 @@
 //
 //  UsersRepositoryProtocol.swift
-//  
+//
 //
 //  Created by Hussam Elsadany on 24/02/2024.
 //
@@ -11,7 +11,7 @@ public protocol UsersRepositoryProtocol {
     ///
     /// `GET /users`
     ///
-    /// - Returns: An array of `UsersEntity` objects, each representing a user.
+    /// - Returns: An array of `UserEntity` objects, each representing a user.
     /// - Throws: An error if the request fails or data cannot be decoded.
-    func getUsers() async throws -> [UsersEntity]
+    func getUsers() async throws -> [UserEntity]
 }

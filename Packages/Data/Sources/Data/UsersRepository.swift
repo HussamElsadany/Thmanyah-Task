@@ -22,9 +22,9 @@ public final class UsersRepository {
 }
 
 extension UsersRepository: UsersRepositoryProtocol {
-    public func getUsers() async throws -> [UsersEntity] {
+    public func getUsers() async throws -> [UserEntity] {
         try await netWork.send(
-            [UsersEntity].self,
+            [UserEntity].self,
             endpoint: UsersEndpoint.getUsers
         )
     }

@@ -24,9 +24,9 @@ public final class PhotosRepository {
 extension PhotosRepository: PhotosRepositoryProtocol {
     public func getPhotos(
         albumId: Int
-    ) async throws -> [PhotosEntity] {
+    ) async throws -> [PhotoEntity] {
         try await netWork.send(
-            [PhotosEntity].self,
+            [PhotoEntity].self,
             endpoint: PhotosEndpoint.getPhotos(albumId: albumId)
         )
     }

@@ -10,9 +10,9 @@ public protocol UsersUseCaseProtocol {
     
     /// Asynchronously retrieves a list of users.
     ///
-    /// - Returns: An array of `UsersEntity` objects, each representing a user.
+    /// - Returns: An array of `UserEntity` objects, each representing a user.
     /// - Throws: An error if the request fails or data cannot be decoded.
-    func getUsers() async throws -> [UsersEntity]
+    func getUsers() async throws -> [UserEntity]
 }
 
 // MARK: - UsersUseCase
@@ -28,7 +28,7 @@ public final class UsersUseCase {
 }
 
 extension UsersUseCase: UsersUseCaseProtocol {
-    public func getUsers() async throws -> [UsersEntity] {
+    public func getUsers() async throws -> [UserEntity] {
         try await repository.getUsers()
     }
 }

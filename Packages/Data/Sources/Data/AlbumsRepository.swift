@@ -24,9 +24,9 @@ public final class AlbumsRepository {
 extension AlbumsRepository: AlbumsRepositoryProtocol {
     public func getAlbums(
         userId: Int
-    ) async throws -> [AlbumsEntity] {
+    ) async throws -> [AlbumEntity] {
         try await netWork.send(
-            [AlbumsEntity].self,
+            [AlbumEntity].self,
             endpoint: AlbumsEndpoint.getAlbums(userId: userId)
         )
     }
