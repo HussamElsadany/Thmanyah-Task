@@ -17,6 +17,7 @@ final public class AlbumViewModel: ObservableObject {
     
     // MARK: Data
     private let album: AlbumEntity
+    private var photos: [PhotoEntity] = []
     
     // MARK: UseCase
     private let photosUseCase: PhotosUseCaseProtocol
@@ -24,6 +25,7 @@ final public class AlbumViewModel: ObservableObject {
     // MARK: Publishers
     @Published var viewState: AlbumViewState = .loading
     @Published var showError = false
+    @Published var albumTitle: String
     
     // MARK: Initialization
     init(
@@ -34,12 +36,22 @@ final public class AlbumViewModel: ObservableObject {
         self.album = album
         self.photosUseCase = photosUseCase
         self.navigationHandler = navigationHandler
+        self.albumTitle = album.title
     }
 }
 
 extension AlbumViewModel {
     func viewDidLoad() {
         fetchViewData()
+    }
+    
+    func filterPhotos(_ searchText: String) {
+        if searchText.isEmpty {
+            self.viewState = .content(self.photos.map { PhotoAdapter(photo: $0)})
+        } else {
+            let photos = self.photos.filter { $0.title.localizedCaseInsensitiveContains(searchText) }
+            self.viewState = .content(photos.map { PhotoAdapter(photo: $0)})
+        }
     }
 }
 
@@ -49,6 +61,7 @@ private extension AlbumViewModel {
         Task {
             do {
                 let photos = try await photosUseCase.getPhotos(albumId: album.id)
+                self.photos = photos
                 self.viewState = .content(photos.map { PhotoAdapter(photo: $0) })
             } catch {
                 self.showError = true

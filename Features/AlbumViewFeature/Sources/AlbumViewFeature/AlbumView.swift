@@ -15,25 +15,25 @@ struct AlbumView: View {
     @StateObject
     private var viewModel: AlbumViewModel
     
+    @State
+    private var searchText = ""
+    
     // MARK: - Initialization
     init(viewModel: StateObject<AlbumViewModel>) {
         self._viewModel = viewModel
     }
     
-    let columns: [GridItem] = [
-        GridItem(.flexible(), spacing: Sizes.spacing0),
-        GridItem(.flexible(), spacing: Sizes.spacing0),
-        GridItem(.flexible(), spacing: Sizes.spacing0)
-    ]
-    
-    
     // MARK: - Body
     var body: some View {
         contentView
-            .navigationTitle("Profile")
+            .navigationTitle(viewModel.albumTitle)
             .onLoad {
                 viewModel.viewDidLoad()
             }
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+            .onChange(of: searchText, { _, newValue in
+                viewModel.filterPhotos(newValue)
+            })
             .alert(isPresented: $viewModel.showError, content: {
                 Alert(
                     title: Text("Error"),
@@ -48,28 +48,7 @@ struct AlbumView: View {
         case .loading:
             LoadingView()
         case .content(let photos):
-            GeometryReader { geometry in
-                ScrollView {
-                    LazyVGrid(columns: columns, spacing: Sizes.spacing0) {
-                        ForEach(photos) {
-                            RemoteImageView(resource: $0.thumbnail)
-                                .frame(height: Sizes.calculateHeight(geometry.size.width))
-                                .frame(maxWidth: .infinity)
-                        }
-                    }
-                    .padding(Sizes.spacing0)
-                }
-            }
-        }
-    }
-}
-
-private extension AlbumView {
-    struct Sizes {
-        static let spacing0: CGFloat = 0
-        
-        static func calculateHeight(_ width: CGFloat) -> CGFloat {
-            return width / 3
+            AlbumGridView(photos: photos)
         }
     }
 }
