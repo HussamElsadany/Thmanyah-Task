@@ -12,6 +12,14 @@
 		DC69C8772B85568B009CCF11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC69C8762B85568B009CCF11 /* Assets.xcassets */; };
 		DC69C87A2B85568B009CCF11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC69C8782B85568B009CCF11 /* LaunchScreen.storyboard */; };
 		DC69C8852B85568B009CCF11 /* Thmanyah_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69C8842B85568B009CCF11 /* Thmanyah_TaskTests.swift */; };
+		DC69C8A92B8A310A009CCF11 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69C8A82B8A310A009CCF11 /* AppCoordinator.swift */; };
+		DC69C8AC2B8A3214009CCF11 /* AppEnvironment in Frameworks */ = {isa = PBXBuildFile; productRef = DC69C8AB2B8A3214009CCF11 /* AppEnvironment */; };
+		DC69C8AE2B8A3214009CCF11 /* CoreNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = DC69C8AD2B8A3214009CCF11 /* CoreNetwork */; };
+		DC69C8B02B8A3214009CCF11 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = DC69C8AF2B8A3214009CCF11 /* Data */; };
+		DC69C8B22B8A3214009CCF11 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = DC69C8B12B8A3214009CCF11 /* Domain */; };
+		DC69C8B42B8A3214009CCF11 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = DC69C8B32B8A3214009CCF11 /* Extensions */; };
+		DC69C8B62B8A3214009CCF11 /* ThmanyahAPI in Frameworks */ = {isa = PBXBuildFile; productRef = DC69C8B52B8A3214009CCF11 /* ThmanyahAPI */; };
+		DC69C8B82B8A3214009CCF11 /* UsersListFeature in Frameworks */ = {isa = PBXBuildFile; productRef = DC69C8B72B8A3214009CCF11 /* UsersListFeature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +42,7 @@
 		DC69C8802B85568B009CCF11 /* Thmanyah-TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Thmanyah-TaskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC69C8842B85568B009CCF11 /* Thmanyah_TaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thmanyah_TaskTests.swift; sourceTree = "<group>"; };
 		DC69C8A02B8565AB009CCF11 /* Thmanyah-Task.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Thmanyah-Task.xcconfig"; sourceTree = "<group>"; };
+		DC69C8A82B8A310A009CCF11 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +50,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC69C8B42B8A3214009CCF11 /* Extensions in Frameworks */,
+				DC69C8B62B8A3214009CCF11 /* ThmanyahAPI in Frameworks */,
+				DC69C8AE2B8A3214009CCF11 /* CoreNetwork in Frameworks */,
+				DC69C8AC2B8A3214009CCF11 /* AppEnvironment in Frameworks */,
+				DC69C8B22B8A3214009CCF11 /* Domain in Frameworks */,
+				DC69C8B02B8A3214009CCF11 /* Data in Frameworks */,
+				DC69C8B82B8A3214009CCF11 /* UsersListFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +76,7 @@
 				DC69C86C2B855687009CCF11 /* Thmanyah-Task */,
 				DC69C8832B85568B009CCF11 /* Thmanyah-TaskTests */,
 				DC69C86B2B855687009CCF11 /* Products */,
+				DC69C8AA2B8A3214009CCF11 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +113,7 @@
 			children = (
 				DC69C86D2B855687009CCF11 /* AppDelegate.swift */,
 				DC69C86F2B855687009CCF11 /* SceneDelegate.swift */,
+				DC69C8A82B8A310A009CCF11 /* AppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -117,6 +135,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		DC69C8AA2B8A3214009CCF11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,6 +158,15 @@
 			dependencies = (
 			);
 			name = "Thmanyah-Task";
+			packageProductDependencies = (
+				DC69C8AB2B8A3214009CCF11 /* AppEnvironment */,
+				DC69C8AD2B8A3214009CCF11 /* CoreNetwork */,
+				DC69C8AF2B8A3214009CCF11 /* Data */,
+				DC69C8B12B8A3214009CCF11 /* Domain */,
+				DC69C8B32B8A3214009CCF11 /* Extensions */,
+				DC69C8B52B8A3214009CCF11 /* ThmanyahAPI */,
+				DC69C8B72B8A3214009CCF11 /* UsersListFeature */,
+			);
 			productName = "Thmanyah-Task";
 			productReference = DC69C86A2B855687009CCF11 /* Thmanyah-Task.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC69C8A92B8A310A009CCF11 /* AppCoordinator.swift in Sources */,
 				DC69C86E2B855687009CCF11 /* AppDelegate.swift in Sources */,
 				DC69C8702B855687009CCF11 /* SceneDelegate.swift in Sources */,
 			);
@@ -384,8 +419,7 @@
 				INFOPLIST_FILE = "Thmanyah-Task/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -410,8 +444,7 @@
 				INFOPLIST_FILE = "Thmanyah-Task/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -494,6 +527,37 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DC69C8AB2B8A3214009CCF11 /* AppEnvironment */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppEnvironment;
+		};
+		DC69C8AD2B8A3214009CCF11 /* CoreNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreNetwork;
+		};
+		DC69C8AF2B8A3214009CCF11 /* Data */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Data;
+		};
+		DC69C8B12B8A3214009CCF11 /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
+		DC69C8B32B8A3214009CCF11 /* Extensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Extensions;
+		};
+		DC69C8B52B8A3214009CCF11 /* ThmanyahAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ThmanyahAPI;
+		};
+		DC69C8B72B8A3214009CCF11 /* UsersListFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UsersListFeature;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DC69C8622B855687009CCF11 /* Project object */;
 }

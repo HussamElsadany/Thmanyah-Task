@@ -29,4 +29,11 @@
          location = "group:ImageCache">
       </FileRef>
    </Group>
+   <Group
+      location = "group:Features"
+      name = "Features">
+      <FileRef
+         location = "group:UsersListFeature">
+      </FileRef>
+   </Group>
 </Workspace>
