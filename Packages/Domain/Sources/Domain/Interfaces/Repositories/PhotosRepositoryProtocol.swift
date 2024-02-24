@@ -9,9 +9,12 @@ public protocol PhotosRepositoryProtocol {
     
     /// Asynchronously obtains a series of photos.
     ///
-    /// `GET /photos`
+    /// `GET /photos?albumId=`
     ///
-    /// - Returns: An array of `PhotosEntity` objects, with each representing a photo.
-    /// - Throws: An error if the request fails or data cannot be decoded.
-    func getPhotos() async throws -> [PhotosEntity]
+    /// - Parameter albumId: The unique identifier for the album whose photos are being requested.
+    /// - Returns: An array of `PhotosEntity` objects, each representing a photo belonging to the specified album.
+    /// - Throws: An error if the request fails due to network issues, if the album ID does not exist, or if the response data cannot be decoded into the array of `PhotosEntity`.
+    func getPhotos(
+        albumId: Int
+    ) async throws -> [PhotosEntity]
 }

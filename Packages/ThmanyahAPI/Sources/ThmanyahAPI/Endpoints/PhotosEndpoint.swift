@@ -9,7 +9,7 @@ import Foundation
 import CoreNetwork
 
 public enum PhotosEndpoint {
-    case getPhotos
+    case getPhotos(albumId: Int)
 }
 
 extension PhotosEndpoint: HTTPEndpoint {
@@ -37,7 +37,11 @@ extension PhotosEndpoint: HTTPEndpoint {
     }
     
     public var queryParameters: [URLQueryItem]? {
-        return nil
+        switch self {
+        case .getPhotos(let albumId):
+            let quesrtyItems = URLQueryItem(name: "albumId", value: String(describing: albumId))
+            return [quesrtyItems]
+        }
     }
     
     public var timeout: TimeInterval? {
