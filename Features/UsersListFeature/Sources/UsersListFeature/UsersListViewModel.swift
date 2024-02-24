@@ -7,6 +7,7 @@
 
 import Domain
 import Foundation
+import Extensions
 
 // MARK: - UsersListViewModel
 @MainActor
@@ -24,7 +25,7 @@ final public class UsersListViewModel: ObservableObject {
     private let albumsUseCase: AlbumsUseCaseProtocol
     
     // MARK: Publishers
-    @Published public var viewState: UsersListViewState = .loading
+    @Published public var viewState: ViewState<UserAdapter> = .loading
     @Published public var showError = false
     
     // MARK: Initialization

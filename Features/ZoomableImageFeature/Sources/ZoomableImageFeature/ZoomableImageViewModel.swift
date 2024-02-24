@@ -8,6 +8,7 @@
 import SwiftUI
 import Foundation
 import ImageCache
+import Extensions
 
 // MARK: - ZoomableImageViewModel
 @MainActor
@@ -17,7 +18,7 @@ final public class ZoomableImageViewModel: ObservableObject {
     private let imageUrl: URL
    
     // MARK: Publishers
-    @Published var viewState: ZoomableImageViewState = .loading
+    @Published var viewState: ViewState<Image> = .loading
     
     // MARK: Initialization
     init(imageUrl: URL) {

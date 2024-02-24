@@ -7,6 +7,7 @@
 
 import Domain
 import Foundation
+import Extensions
 
 // MARK: - AlbumViewModel
 @MainActor
@@ -23,7 +24,7 @@ final public class AlbumViewModel: ObservableObject {
     private let photosUseCase: PhotosUseCaseProtocol
     
     // MARK: Publishers
-    @Published public var viewState: AlbumViewState = .loading
+    @Published public var viewState: ViewState<[PhotoAdapter]> = .loading
     @Published public var showError = false
     @Published var albumTitle: String
     

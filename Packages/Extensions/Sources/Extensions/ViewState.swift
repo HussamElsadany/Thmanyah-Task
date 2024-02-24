@@ -1,13 +1,14 @@
 //
-//  AlbumViewState.swift
+//  ViewState.swift
 //
 //
 //  Created by Hussam Elsadany on 24/02/2024.
 //
 
-public enum AlbumViewState {
+public enum ViewState<Content> {
+    
     case loading
-    case content([PhotoAdapter])
+    case content(Content)
     
     var isLoading: Bool {
         switch self {
