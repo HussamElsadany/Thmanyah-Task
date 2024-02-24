@@ -11,6 +11,7 @@ import Domain
 import CoreNetwork
 import AppEnvironment
 import UsersListFeature
+import AlbumViewFeature
 
 /// Main application coordinator.
 final class AppCoordinator {
@@ -32,7 +33,7 @@ final class AppCoordinator {
     }
     
     // MARK: Start The Coordinator.
-    @MainActor 
+    @MainActor
     func start() {
         // TODO: Use DIContainer for network, useCases and repos.
         let network = NetworkClient()
@@ -44,15 +45,36 @@ final class AppCoordinator {
         
         let view = UsersListBuilder.build(
             usersUseCase: usersUseCase,
-            albumsUseCase: albumsUseCase) { [weak self] destination in
-                guard let self else { return }
-                switch destination {
-                case .openPhotos(let albumId): break
-                }
+            albumsUseCase: albumsUseCase
+        ) { [weak self] destination in
+            guard let self else { return }
+            switch destination {
+            case .openAlbum(let album):
+                self.openAlbumDetails(album)
             }
+        }
         
         self.rootController.viewControllers = [view]
         self.window?.rootViewController = rootController
         window?.makeKeyAndVisible()
+    }
+}
+
+private extension AppCoordinator {
+    @MainActor
+    func openAlbumDetails(_ album: AlbumEntity) {
+        let network = NetworkClient()
+        let photosRepository = PhotosRepository(netWork: network)
+        let photosUseCase = PhotosUseCase(repository: photosRepository)
+        
+        let view = AlbumViewBuilder.build(
+            album: album,
+            photosUseCase: photosUseCase
+        ) { [weak self] destination in
+            switch destination {
+            case .openPhotos: break
+            }
+        }
+        self.rootController.pushViewController(view, animated: true)
     }
 }

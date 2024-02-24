@@ -20,6 +20,7 @@
 		DC69C8B42B8A3214009CCF11 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = DC69C8B32B8A3214009CCF11 /* Extensions */; };
 		DC69C8B62B8A3214009CCF11 /* ThmanyahAPI in Frameworks */ = {isa = PBXBuildFile; productRef = DC69C8B52B8A3214009CCF11 /* ThmanyahAPI */; };
 		DC69C8B82B8A3214009CCF11 /* UsersListFeature in Frameworks */ = {isa = PBXBuildFile; productRef = DC69C8B72B8A3214009CCF11 /* UsersListFeature */; };
+		DC69C8BA2B8A68B4009CCF11 /* AlbumViewFeature in Frameworks */ = {isa = PBXBuildFile; productRef = DC69C8B92B8A68B4009CCF11 /* AlbumViewFeature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC69C8BA2B8A68B4009CCF11 /* AlbumViewFeature in Frameworks */,
 				DC69C8B42B8A3214009CCF11 /* Extensions in Frameworks */,
 				DC69C8B62B8A3214009CCF11 /* ThmanyahAPI in Frameworks */,
 				DC69C8AE2B8A3214009CCF11 /* CoreNetwork in Frameworks */,
@@ -166,6 +168,7 @@
 				DC69C8B32B8A3214009CCF11 /* Extensions */,
 				DC69C8B52B8A3214009CCF11 /* ThmanyahAPI */,
 				DC69C8B72B8A3214009CCF11 /* UsersListFeature */,
+				DC69C8B92B8A68B4009CCF11 /* AlbumViewFeature */,
 			);
 			productName = "Thmanyah-Task";
 			productReference = DC69C86A2B855687009CCF11 /* Thmanyah-Task.app */;
@@ -556,6 +559,10 @@
 		DC69C8B72B8A3214009CCF11 /* UsersListFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UsersListFeature;
+		};
+		DC69C8B92B8A68B4009CCF11 /* AlbumViewFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AlbumViewFeature;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

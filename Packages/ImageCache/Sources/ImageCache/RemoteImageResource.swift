@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  RemoteImageResource.swift
+//
 //
 //  Created by Hussam Elsadany on 21/02/2024.
 //
