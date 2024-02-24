@@ -1,5 +1,5 @@
 //
-//  AlbumsListEndpoint.swift
+//  AlbumsEndpoint.swift
 //
 //
 //  Created by Hussam Elsadany on 21/02/2024.
@@ -8,25 +8,19 @@
 import Foundation
 import CoreNetwork
 
-public enum AlbumsListEndpoint {
-    case getUsers
+public enum AlbumsEndpoint {
     case getAlbums
-    case getPhotos
 }
 
-extension AlbumsListEndpoint: HTTPEndpoint {
+extension AlbumsEndpoint: HTTPEndpoint {
     public var baseURL: String {
         CommonMovieService.baseURL
     }
     
     public var path: String {
         switch self {
-        case .getUsers:
-            return "/users"
         case .getAlbums:
             return "/albums"
-        case .getPhotos:
-            return "/photos"
         }
     }
     
