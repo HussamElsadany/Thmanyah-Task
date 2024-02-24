@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "BC3CAA38-B3C4-4CB3-93D4-6E84780AD80A",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:..\/Packages\/Data",
+        "identifier" : "DataTests",
+        "name" : "DataTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/Packages\/Domain",
+        "identifier" : "DomainTests",
+        "name" : "DomainTests"
+      }
+    }
+  ],
+  "version" : 1
+}

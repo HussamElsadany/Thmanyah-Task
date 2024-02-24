@@ -11,7 +11,6 @@
 		DC69C8702B855687009CCF11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69C86F2B855687009CCF11 /* SceneDelegate.swift */; };
 		DC69C8772B85568B009CCF11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC69C8762B85568B009CCF11 /* Assets.xcassets */; };
 		DC69C87A2B85568B009CCF11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC69C8782B85568B009CCF11 /* LaunchScreen.storyboard */; };
-		DC69C8852B85568B009CCF11 /* Thmanyah_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69C8842B85568B009CCF11 /* Thmanyah_TaskTests.swift */; };
 		DC69C8A92B8A310A009CCF11 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69C8A82B8A310A009CCF11 /* AppCoordinator.swift */; };
 		DC69C8AC2B8A3214009CCF11 /* AppEnvironment in Frameworks */ = {isa = PBXBuildFile; productRef = DC69C8AB2B8A3214009CCF11 /* AppEnvironment */; };
 		DC69C8AE2B8A3214009CCF11 /* CoreNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = DC69C8AD2B8A3214009CCF11 /* CoreNetwork */; };
@@ -24,16 +23,6 @@
 		DC69C8BC2B8A802E009CCF11 /* ZoomableImageFeature in Frameworks */ = {isa = PBXBuildFile; productRef = DC69C8BB2B8A802E009CCF11 /* ZoomableImageFeature */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		DC69C8812B85568B009CCF11 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC69C8622B855687009CCF11 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC69C8692B855687009CCF11;
-			remoteInfo = "Thmanyah-Task";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		DC69C86A2B855687009CCF11 /* Thmanyah-Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thmanyah-Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC69C86D2B855687009CCF11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,10 +30,9 @@
 		DC69C8762B85568B009CCF11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC69C8792B85568B009CCF11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC69C87B2B85568B009CCF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC69C8802B85568B009CCF11 /* Thmanyah-TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Thmanyah-TaskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC69C8842B85568B009CCF11 /* Thmanyah_TaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thmanyah_TaskTests.swift; sourceTree = "<group>"; };
 		DC69C8A02B8565AB009CCF11 /* Thmanyah-Task.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Thmanyah-Task.xcconfig"; sourceTree = "<group>"; };
 		DC69C8A82B8A310A009CCF11 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		DC69C8BD2B8A8C05009CCF11 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,21 +52,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC69C87D2B85568B009CCF11 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		DC69C8612B855687009CCF11 = {
 			isa = PBXGroup;
 			children = (
+				DC69C8BD2B8A8C05009CCF11 /* TestPlan.xctestplan */,
 				DC69C86C2B855687009CCF11 /* Thmanyah-Task */,
-				DC69C8832B85568B009CCF11 /* Thmanyah-TaskTests */,
 				DC69C86B2B855687009CCF11 /* Products */,
 				DC69C8AA2B8A3214009CCF11 /* Frameworks */,
 			);
@@ -88,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				DC69C86A2B855687009CCF11 /* Thmanyah-Task.app */,
-				DC69C8802B85568B009CCF11 /* Thmanyah-TaskTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,14 +82,6 @@
 				DC69C89F2B856503009CCF11 /* Resources */,
 			);
 			path = "Thmanyah-Task";
-			sourceTree = "<group>";
-		};
-		DC69C8832B85568B009CCF11 /* Thmanyah-TaskTests */ = {
-			isa = PBXGroup;
-			children = (
-				DC69C8842B85568B009CCF11 /* Thmanyah_TaskTests.swift */,
-			);
-			path = "Thmanyah-TaskTests";
 			sourceTree = "<group>";
 		};
 		DC69C89D2B8564F1009CCF11 /* App */ = {
@@ -177,24 +149,6 @@
 			productReference = DC69C86A2B855687009CCF11 /* Thmanyah-Task.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DC69C87F2B85568B009CCF11 /* Thmanyah-TaskTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DC69C8972B85568B009CCF11 /* Build configuration list for PBXNativeTarget "Thmanyah-TaskTests" */;
-			buildPhases = (
-				DC69C87C2B85568B009CCF11 /* Sources */,
-				DC69C87D2B85568B009CCF11 /* Frameworks */,
-				DC69C87E2B85568B009CCF11 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DC69C8822B85568B009CCF11 /* PBXTargetDependency */,
-			);
-			name = "Thmanyah-TaskTests";
-			productName = "Thmanyah-TaskTests";
-			productReference = DC69C8802B85568B009CCF11 /* Thmanyah-TaskTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -207,10 +161,6 @@
 				TargetAttributes = {
 					DC69C8692B855687009CCF11 = {
 						CreatedOnToolsVersion = 15.0;
-					};
-					DC69C87F2B85568B009CCF11 = {
-						CreatedOnToolsVersion = 15.0;
-						TestTargetID = DC69C8692B855687009CCF11;
 					};
 				};
 			};
@@ -228,7 +178,6 @@
 			projectRoot = "";
 			targets = (
 				DC69C8692B855687009CCF11 /* Thmanyah-Task */,
-				DC69C87F2B85568B009CCF11 /* Thmanyah-TaskTests */,
 			);
 		};
 /* End PBXProject section */
@@ -240,13 +189,6 @@
 			files = (
 				DC69C87A2B85568B009CCF11 /* LaunchScreen.storyboard in Resources */,
 				DC69C8772B85568B009CCF11 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC69C87E2B85568B009CCF11 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,23 +205,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC69C87C2B85568B009CCF11 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DC69C8852B85568B009CCF11 /* Thmanyah_TaskTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DC69C8822B85568B009CCF11 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DC69C8692B855687009CCF11 /* Thmanyah-Task */;
-			targetProxy = DC69C8812B85568B009CCF11 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DC69C8782B85568B009CCF11 /* LaunchScreen.storyboard */ = {
@@ -464,44 +390,6 @@
 			};
 			name = Release;
 		};
-		DC69C8982B85568B009CCF11 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.thmanyah.Thmanyah-TaskTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thmanyah-Task.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Thmanyah-Task";
-			};
-			name = Debug;
-		};
-		DC69C8992B85568B009CCF11 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.thmanyah.Thmanyah-TaskTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thmanyah-Task.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Thmanyah-Task";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -519,15 +407,6 @@
 			buildConfigurations = (
 				DC69C8952B85568B009CCF11 /* Debug */,
 				DC69C8962B85568B009CCF11 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DC69C8972B85568B009CCF11 /* Build configuration list for PBXNativeTarget "Thmanyah-TaskTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DC69C8982B85568B009CCF11 /* Debug */,
-				DC69C8992B85568B009CCF11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
