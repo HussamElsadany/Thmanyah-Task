@@ -48,7 +48,10 @@ struct AlbumView: View {
         case .loading:
             LoadingView()
         case .content(let photos):
-            AlbumGridView(photos: photos)
+            AlbumGridView(
+                photos: photos,
+                selectionHandler: viewModel.selectPhoto(_:)
+            )
         }
     }
 }

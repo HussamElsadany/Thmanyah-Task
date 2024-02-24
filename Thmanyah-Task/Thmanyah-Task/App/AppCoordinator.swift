@@ -12,6 +12,7 @@ import CoreNetwork
 import AppEnvironment
 import UsersListFeature
 import AlbumViewFeature
+import ZoomableImageFeature
 
 /// Main application coordinator.
 final class AppCoordinator {
@@ -50,7 +51,7 @@ final class AppCoordinator {
             guard let self else { return }
             switch destination {
             case .openAlbum(let album):
-                self.openAlbumDetails(album)
+                openAlbumDetails(album)
             }
         }
         
@@ -71,10 +72,20 @@ private extension AppCoordinator {
             album: album,
             photosUseCase: photosUseCase
         ) { [weak self] destination in
+            guard let self else { return }
             switch destination {
-            case .openPhotos: break
+            case .openPhotos(let url):
+                openZoomableImage(imageURL: url)
             }
         }
+        self.rootController.pushViewController(view, animated: true)
+    }
+}
+
+private extension AppCoordinator {
+    @MainActor 
+    func openZoomableImage(imageURL: URL) {
+        let view = ZoomableImageBuilder.build(imageURL: imageURL)
         self.rootController.pushViewController(view, animated: true)
     }
 }

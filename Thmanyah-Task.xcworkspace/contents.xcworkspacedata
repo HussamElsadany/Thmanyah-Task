@@ -33,6 +33,9 @@
       location = "group:Features"
       name = "Features">
       <FileRef
+         location = "group:ZoomableImageFeature">
+      </FileRef>
+      <FileRef
          location = "group:AlbumViewFeature">
       </FileRef>
       <FileRef

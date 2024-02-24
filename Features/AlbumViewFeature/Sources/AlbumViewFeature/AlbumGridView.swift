@@ -15,15 +15,19 @@ struct AlbumGridView: View {
     }
     
     let photos: [PhotoAdapter]
+    let selectionHandler: (PhotoAdapter) -> Void
     
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
                 LazyVGrid(columns: columns, spacing: Sizes.spacing0) {
-                    ForEach(photos) {
-                        RemoteImageView(resource: $0.thumbnail)
+                    ForEach(photos) { item in
+                        RemoteImageView(resource: item.thumbnail)
                             .frame(height: Sizes.calculateHeight(geometry.size.width))
                             .frame(maxWidth: .infinity)
+                            .onTapGesture {
+                                selectionHandler(item)
+                            }
                     }
                 }
                 .padding(Sizes.spacing0)

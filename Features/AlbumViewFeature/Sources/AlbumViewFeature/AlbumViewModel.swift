@@ -8,7 +8,7 @@
 import Domain
 import Foundation
 
-// MARK: - UsersListViewModel
+// MARK: - AlbumViewModel
 @MainActor
 final public class AlbumViewModel: ObservableObject {
     
@@ -53,6 +53,14 @@ extension AlbumViewModel {
             self.viewState = .content(photos.map { PhotoAdapter(photo: $0)})
         }
     }
+    
+    func selectPhoto(_ photo: PhotoAdapter) {
+        guard let photo = self.photos.first(where: {$0.id == photo.id}),
+              let url = URL(string: photo.url) else {
+            return
+        }
+        navigationHandler(.openPhotos(url))
+    }
 }
 
 // MARK: - Calling Api's
@@ -75,6 +83,6 @@ extension AlbumViewModel {
     public typealias NavigationActionHandler = (AlbumViewModel.NavigationAction) -> Void
     
     public enum NavigationAction {
-        case openPhotos(PhotoAdapter)
+        case openPhotos(URL)
     }
 }
