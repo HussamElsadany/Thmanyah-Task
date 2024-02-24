@@ -19,11 +19,6 @@ public enum CommonMovieService {
         return "https://\(apiBaseURL)"
     }
     
-    public static var baseImagesURL: String {
-        let apiImageBaseURL: String = AppEnvironment.current.getValue(.apiImageBaseURL)
-        return "https://\(apiImageBaseURL)"
-    }
-    
     public static var language: String {
         guard let current = Locale.current.language.languageCode?.identifier,
               CommonMovieService.supportedLanguages.contains(current) else {
