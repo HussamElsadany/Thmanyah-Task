@@ -6,9 +6,6 @@
 //
 
 public enum EnvironmentConfigurationKeys: String {
-    
-    case configuration  = "Configuration"
-    
-    case apiBaseURL      = "API_BASE_URL"
-    case apiImageBaseURL = "API_IMAGES_BASE_URL"
+    case configuration = "Configuration"
+    case apiBaseURL = "API_BASE_URL"
 }

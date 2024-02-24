@@ -6,8 +6,6 @@
 	<dict>
 		<key>API_BASE_URL</key>
 		<string>$(API_BASE_URL)</string>
-		<key>API_IMAGES_BASE_URL</key>
-		<string>$(API_IMAGES_BASE_URL)</string>
 		<key>Configuration</key>
 		<string>$(CONFIGURATION)</string>
 	</dict>
