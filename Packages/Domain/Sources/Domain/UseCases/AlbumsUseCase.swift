@@ -21,8 +21,10 @@ public protocol AlbumsUseCaseProtocol {
 // MARK: - AlbumsUseCase
 public final class AlbumsUseCase {
     
+    // MARK: Private Properties
     let repository: AlbumsRepositoryProtocol
     
+    // MARK: Initialization
     public init(repository: AlbumsRepositoryProtocol) {
         self.repository = repository
     }

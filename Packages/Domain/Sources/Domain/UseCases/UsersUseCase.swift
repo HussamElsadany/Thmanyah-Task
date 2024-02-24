@@ -18,8 +18,10 @@ public protocol UsersUseCaseProtocol {
 // MARK: - UsersUseCase
 public final class UsersUseCase {
     
+    // MARK: Private Properties
     let repository: UsersRepositoryProtocol
     
+    // MARK: Initialization
     public init(repository: UsersRepositoryProtocol) {
         self.repository = repository
     }

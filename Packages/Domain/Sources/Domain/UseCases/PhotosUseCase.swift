@@ -21,8 +21,10 @@ public protocol PhotosUseCaseProtocol {
 // MARK: - PhotosUseCase
 public final class PhotosUseCase {
     
+    // MARK: Private Properties
     let repository: PhotosRepositoryProtocol
     
+    // MARK: Initialization
     public init(repository: PhotosRepositoryProtocol) {
         self.repository = repository
     }
