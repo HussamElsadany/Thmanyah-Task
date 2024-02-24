@@ -5,7 +5,7 @@
 //  Created by Hussam Elsadany on 24/02/2024.
 //
 
-enum AlbumViewState {
+public enum AlbumViewState {
     case loading
     case content([PhotoAdapter])
     

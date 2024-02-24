@@ -5,7 +5,7 @@
 //  Created by Hussam Elsadany on 24/02/2024.
 //
 
-enum UsersListViewState {
+public enum UsersListViewState {
     case loading
     case content(UserAdapter)
     

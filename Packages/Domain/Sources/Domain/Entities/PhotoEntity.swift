@@ -22,8 +22,8 @@ extension PhotoEntity {
         .init(
             albumID: 1,
             id: 1,
-            title: "",
-            url: "",
+            title: "Photo 1",
+            url: "SMSM",
             thumbnailURL: ""
         )
     }

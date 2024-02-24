@@ -24,11 +24,11 @@ final public class UsersListViewModel: ObservableObject {
     private let albumsUseCase: AlbumsUseCaseProtocol
     
     // MARK: Publishers
-    @Published var viewState: UsersListViewState = .loading
-    @Published var showError = false
+    @Published public var viewState: UsersListViewState = .loading
+    @Published public var showError = false
     
     // MARK: Initialization
-    init(
+    public init(
         usersUseCase: UsersUseCaseProtocol,
         albumsUseCase: AlbumsUseCaseProtocol,
         navigationHandler: @escaping NavigationActionHandler
@@ -40,11 +40,11 @@ final public class UsersListViewModel: ObservableObject {
 }
 
 extension UsersListViewModel {
-    func viewDidLoad() {
+    public func viewDidLoad() {
         fetchViewData()
     }
     
-    func selectAlbum(_ album: AlbumAdapter) {
+    public func selectAlbum(_ album: AlbumAdapter) {
         guard let selectedAlbum = self.albums.first(where: {
             $0.id == album.id
         }) else {

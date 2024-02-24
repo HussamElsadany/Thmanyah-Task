@@ -25,6 +25,20 @@
         "identifier" : "DomainTests",
         "name" : "DomainTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/Features\/UsersListFeature",
+        "identifier" : "UsersListFeatureTests",
+        "name" : "UsersListFeatureTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/Features\/AlbumViewFeature",
+        "identifier" : "AlbumViewFeatureTests",
+        "name" : "AlbumViewFeatureTests"
+      }
     }
   ],
   "version" : 1

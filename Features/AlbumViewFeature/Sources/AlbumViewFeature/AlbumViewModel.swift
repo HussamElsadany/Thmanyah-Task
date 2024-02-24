@@ -23,12 +23,12 @@ final public class AlbumViewModel: ObservableObject {
     private let photosUseCase: PhotosUseCaseProtocol
     
     // MARK: Publishers
-    @Published var viewState: AlbumViewState = .loading
-    @Published var showError = false
+    @Published public var viewState: AlbumViewState = .loading
+    @Published public var showError = false
     @Published var albumTitle: String
     
     // MARK: Initialization
-    init(
+    public init(
         album: AlbumEntity,
         photosUseCase: PhotosUseCaseProtocol,
         navigationHandler: @escaping NavigationActionHandler
@@ -41,11 +41,11 @@ final public class AlbumViewModel: ObservableObject {
 }
 
 extension AlbumViewModel {
-    func viewDidLoad() {
+    public func viewDidLoad() {
         fetchViewData()
     }
     
-    func filterPhotos(_ searchText: String) {
+    public func filterPhotos(_ searchText: String) {
         if searchText.isEmpty {
             self.viewState = .content(self.photos.map { PhotoAdapter(photo: $0)})
         } else {
@@ -54,7 +54,7 @@ extension AlbumViewModel {
         }
     }
     
-    func selectPhoto(_ photo: PhotoAdapter) {
+    public func selectPhoto(_ photo: PhotoAdapter) {
         guard let photo = self.photos.first(where: {$0.id == photo.id}),
               let url = URL(string: photo.url) else {
             return
