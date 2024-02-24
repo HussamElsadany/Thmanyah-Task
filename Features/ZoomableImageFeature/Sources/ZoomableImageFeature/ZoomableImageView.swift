@@ -25,7 +25,21 @@ struct AlbumView: View {
     // MARK: - Body
     var body: some View {
         contentView
-            .navigationTitle("")
+            .navigationTitle("Photo")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        viewModel.sharePhotoURL()
+                    }, label: {
+                        Image(systemName: "square.and.arrow.up")
+                    })
+                }
+            }
+            .sheet(isPresented: $viewModel.showShareSheet) {
+                if let image = viewModel.image {
+                    ShareSheet(itemsToShare: [image])
+                }
+            }
             .onLoad {
                 viewModel.loadImage()
             }
@@ -73,4 +87,15 @@ struct ImageView: View {
                 )
         }
     }
+}
+
+struct ShareSheet: UIViewControllerRepresentable {
+    var itemsToShare: [Any]
+    
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        let activityVC = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+        return activityVC
+    }
+    
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }
