@@ -12,6 +12,7 @@ public struct UsersListBuilder {
 
     private init() { }
     
+    @MainActor 
     public static func build(
         usersUseCase: UsersUseCaseProtocol,
         albumsUseCase: AlbumsUseCaseProtocol,

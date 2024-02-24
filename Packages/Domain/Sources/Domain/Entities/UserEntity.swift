@@ -5,7 +5,7 @@
 //  Created by Hussam Elsadany on 24/02/2024.
 //
 
-public struct UserEntity: Codable, Hashable {
+public struct UserEntity: Codable {
     public let id: Int
     public let name, username, email: String
     public let address: AddressEntity
@@ -14,16 +14,16 @@ public struct UserEntity: Codable, Hashable {
 }
 
 extension UserEntity {
-    public struct AddressEntity: Codable, Hashable {
+    public struct AddressEntity: Codable {
         public let street, suite, city, zipcode: String
         public let geo: GeoEntity
     }
     
-    public struct GeoEntity: Codable, Hashable {
+    public struct GeoEntity: Codable {
         public let lat, lng: String
     }
 
-    public struct CompanyEntity: Codable, Hashable {
+    public struct CompanyEntity: Codable {
         public let name, catchPhrase, bs: String
     }
 }

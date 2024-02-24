@@ -32,6 +32,7 @@ final class AppCoordinator {
     }
     
     // MARK: Start The Coordinator.
+    @MainActor 
     func start() {
         // TODO: Use DIContainer for network, useCases and repos.
         let network = NetworkClient()

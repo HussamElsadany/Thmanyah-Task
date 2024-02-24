@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Extensions
 
 struct UsersListView: View {
     
@@ -18,6 +19,34 @@ struct UsersListView: View {
     }
     
     var body: some View {
-        Text("Hussam")
+        contentView
+            .navigationTitle("Profile")
+            .toolbarTitleDisplayMode(.large)
+            .navigationBarTitleDisplayMode(.large)
+            .onLoad {
+                viewModel.viewDidLoad()
+            }
+            .padding(Sizes.contentInsets)
+    }
+    
+    @ViewBuilder 
+    private var contentView: some View {
+        switch viewModel.viewState {
+        case .loading:
+            EmptyView()
+        case .content(let user):
+            UserListContentView(
+                user: user
+            ) { selectedAlbum in
+                viewModel.selectAlbum(selectedAlbum)
+            }
+        }
     }
 }
+
+private extension UsersListView {
+    struct Sizes {
+        static let contentInsets = EdgeInsets(top: 16, leading: 24, bottom: 16, trailing: 24)
+    }
+}
+

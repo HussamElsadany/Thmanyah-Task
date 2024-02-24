@@ -14,11 +14,18 @@ let package = Package(
             name: "UsersListFeature",
             targets: ["UsersListFeature"]),
     ],
+    dependencies: [
+        // Dependencies declare other packages that this package depends on.
+        .package(path: "../Domain"),
+        .package(path: "../ThmanyahAPI"),
+        .package(path: "../Extensions")
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "UsersListFeature"),
+            name: "UsersListFeature",
+            dependencies: ["Domain", "ThmanyahAPI", "Extensions"]),
         .testTarget(
             name: "UsersListFeatureTests",
             dependencies: ["UsersListFeature"]),
