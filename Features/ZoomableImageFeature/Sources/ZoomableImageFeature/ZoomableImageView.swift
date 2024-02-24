@@ -25,7 +25,7 @@ struct AlbumView: View {
     // MARK: - Body
     var body: some View {
         contentView
-            .navigationTitle("Hussam")
+            .navigationTitle("")
             .onLoad {
                 viewModel.loadImage()
             }
