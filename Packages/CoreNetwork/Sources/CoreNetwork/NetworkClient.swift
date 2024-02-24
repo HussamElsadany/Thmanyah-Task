@@ -20,37 +20,14 @@ extension NetworkClient: NetworkClientProtocol {
     public func send<Response>(
         _ response: Response.Type,
         endpoint: HTTPEndpoint
-    ) -> AnyPublisher<Response, Error> where Response : Decodable {
-        Future<Response, Error> { [weak self] closure in
-            guard let self else {
-                closure(.failure(NetworkError.operationCancelled))
-                return
-            }
-            session.dataTask(with: endpoint.urlRequest) { data, urlResponse, error in
-                do {
-                    let object = try self.decode(data: data, type: response)
-                    closure(.success(object))
-                } catch let error {
-                    closure(.failure(error))
-                }
-            }
-            .resume()
-        }
-        .eraseToAnyPublisher()
+    ) async throws -> Response where Response: Decodable {
+        let (data, _) = try await session.data(for: endpoint.urlRequest)
+        let decodedObject = try decode(data: data, type: response)
+        return decodedObject
     }
 }
 
 private extension NetworkClient {
-    func validate(response: URLResponse?, statusCodes: Range<Int>) throws {
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw NetworkError.unknownStatusCode
-        }
-        
-        if !statusCodes.contains(httpResponse.statusCode) {
-            throw NetworkError.unexpectedStatusCode(code: httpResponse.statusCode)
-        }
-    }
-    
     func decode<T: Decodable>(data: Data?, type: T.Type) throws -> T {
         guard let data = data, !data.isEmpty else {
             throw NetworkError.contentEmptyData
